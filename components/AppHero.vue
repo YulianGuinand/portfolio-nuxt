@@ -24,7 +24,7 @@
       >
         <img
           class="w-full h-full object-cover transition-all hover:scale-110"
-          src=""
+          src="/img/profile.jpg"
           alt="profileImage"
         />
       </div>

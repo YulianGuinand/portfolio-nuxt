@@ -92,7 +92,7 @@ onUnmounted(() => {
       </div>
       <div class="menu-item">
         <p>
-          <a href="/about.html" class="menu-item-link buttonLink">A Propos</a>
+          <a href="/about" class="menu-item-link buttonLink">A Propos</a>
         </p>
       </div>
       <div class="menu-item">
