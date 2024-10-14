@@ -1,4 +1,6 @@
 <script setup>
+import ProjectCase from "./ProjectCase.vue";
+
 const datas = [
   {
     title: "Yotion - Un Notion Clone",
@@ -36,7 +38,7 @@ const datas = [
     imageUrl: "./img/Website_Car.png",
     link: "",
   },
-];  
+];
 </script>
 
 <template>
