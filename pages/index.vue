@@ -1,3 +1,4 @@
 <template>
   <AppHero />
+  <AppProjects />
 </template>
