@@ -45,7 +45,7 @@ onMounted(() => {
       duration: 0.2,
       delay: 0.5,
     },
-    "<"
+    "<",
   );
 
   toggleButton.value.forEach((button) => {
@@ -65,27 +65,27 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="w-full flex justify-center">
+  <header class="flex w-full justify-center">
     <nav
-      class="fixed w-full max-w-[1920px] t-0 l-[50%] flex justify-between items-center py-[1.5em] px-[2em] text-white mix-blend-difference z-[99999]"
+      class="t-0 l-[50%] fixed z-[99999] flex w-full max-w-[1920px] items-center justify-between px-[2em] py-[1.5em] text-white mix-blend-difference"
     >
-      <div class="flex-1 info">
+      <div class="info flex-1">
         <p>Portfolio. 1</p>
       </div>
       <div class="flex-1 text-center uppercase">
         <p><a href="#" class="text-[30px]">Le Portfolio de Yulian</a></p>
       </div>
 
-      <div class="flex-1 flex justify-end toggle-menu">
+      <div class="toggle-menu flex flex-1 justify-end">
         <button ref="burger" class="burger buttonLink"></button>
       </div>
     </nav>
   </header>
   <div
-    class="overlay z-[9999] fixed top-0 left-0 w-screen h-full flex bg-[#2d2d2d] will-change-transform"
+    class="overlay fixed left-0 top-0 z-[9999] flex h-full w-screen bg-[#2d2d2d] will-change-transform"
   >
     <div
-      class="overlay-menu fixed top-0 left-0 w-screen h-screen flex gap-4 flex-col justify-center items-center"
+      class="overlay-menu fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-4"
     >
       <div class="menu-item">
         <p><a href="#home" class="menu-item-link buttonLink">Home</a></p>
