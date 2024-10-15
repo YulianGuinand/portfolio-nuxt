@@ -120,7 +120,7 @@ onMounted(() => {
   );
   gsap.fromTo(
     "#competencesSection .competences_container_two",
-    { x: "-50%" },
+    { x: "-30%" },
     {
       x: "-5%",
       scrollTrigger: {
