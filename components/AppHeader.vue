@@ -6,6 +6,8 @@ const link2 = ref();
 const link3 = ref();
 const link4 = ref();
 const link5 = ref();
+const link6 = ref();
+
 let isOpen = false;
 const timeline = gsap.timeline({ paused: true });
 const onClick = () => {
@@ -20,7 +22,7 @@ const onClick = () => {
   isOpen = !isOpen;
 };
 onMounted(() => {
-  const toggleButton = ref([burger, link1, link2, link3, link4, link5]);
+  const toggleButton = ref([burger, link1, link2, link3, link4, link5, link6]);
   gsap.set(".menu-item p", { y: -225 });
 
   timeline.to(".overlay", {
@@ -88,7 +90,9 @@ onUnmounted(() => {
       class="overlay-menu fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-4"
     >
       <div class="menu-item">
-        <p><a href="#home" class="menu-item-link buttonLink">Home</a></p>
+        <p>
+          <a href="#home" ref="link1" class="menu-item-link buttonLink">Home</a>
+        </p>
       </div>
       <div class="menu-item">
         <p>
@@ -97,7 +101,7 @@ onUnmounted(() => {
       </div>
       <div class="menu-item">
         <p>
-          <a href="#projetGalerie" ref="link1" class="menu-item-link buttonLink"
+          <a href="#projetGalerie" ref="link2" class="menu-item-link buttonLink"
             >Galerie de Projet</a
           >
         </p>
@@ -106,7 +110,7 @@ onUnmounted(() => {
         <p>
           <a
             href="#competencesSection"
-            ref="link2"
+            ref="link3"
             class="menu-item-link buttonLink"
             >Compétences</a
           >
@@ -114,7 +118,7 @@ onUnmounted(() => {
       </div>
       <div class="menu-item">
         <p>
-          <a href="#contact" ref="link3" class="menu-item-link buttonLink"
+          <a href="#contact" ref="link4" class="menu-item-link buttonLink"
             >Contact</a
           >
         </p>
@@ -125,7 +129,7 @@ onUnmounted(() => {
       <p>
         <a
           target="_blank"
-          ref="link4"
+          ref="link5"
           href="https://www.linkedin.com/in/yulian-guinand/"
         >
           LinkedIn
@@ -133,7 +137,7 @@ onUnmounted(() => {
       </p>
       <p>.</p>
       <p>
-        <a target="_blank" ref="link5" href="https://github.com/YulianGuinand">
+        <a target="_blank" ref="link6" href="https://github.com/YulianGuinand">
           Github
         </a>
       </p>
