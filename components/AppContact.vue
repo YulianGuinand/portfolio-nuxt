@@ -65,7 +65,7 @@
           ref="message"
         ></textarea>
 
-        <button class="btn" type="submit">Envoyer</button>
+        <Button title="Envoyer" />
       </form>
     </div>
   </section>
