@@ -80,6 +80,9 @@
     padding: 0 2rem;
   }
 }
+.comptences_list p:hover {
+  background: #414040;
+}
 </style>
 
 <script setup>
@@ -91,9 +94,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 onMounted(() => {
   gsap.fromTo(
     "#competencesSection .competences_container_one",
-    { x: "-150%" },
+    { x: "0%" },
     {
-      x: "-100%",
+      x: "-50%",
       scrollTrigger: {
         scrub: true,
         start: "top bottom",
@@ -104,9 +107,9 @@ onMounted(() => {
   );
   gsap.fromTo(
     "#competencesSection .competences_container_three",
-    { x: "20%" },
+    { x: "-50%" },
     {
-      x: "-20%",
+      x: "0%",
       scrollTrigger: {
         scrub: true,
         start: "top bottom",
@@ -117,9 +120,9 @@ onMounted(() => {
   );
   gsap.fromTo(
     "#competencesSection .competences_container_two",
-    { x: "0" },
+    { x: "-50%" },
     {
-      x: "-90%",
+      x: "-5%",
       scrollTrigger: {
         scrub: true,
         start: "top bottom",
