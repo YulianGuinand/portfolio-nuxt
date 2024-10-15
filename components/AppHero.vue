@@ -1,9 +1,9 @@
 <template>
-  <section id="home" class="w-full flex items-center justify-around bg-white">
+  <section id="home" class="flex w-full items-center justify-around bg-white">
     <div
-      class="h-full lg:h-screen w-full max-w-[1920px] flex flex-col-reverse lg:flex-row items-center justify-around pt-32 lg:pt-0"
+      class="flex h-full w-full max-w-[1920px] flex-col-reverse items-center justify-around pt-32 lg:h-screen lg:flex-row lg:pt-0"
     >
-      <div class="w-full max-w-[400px] h-[600px] pt-[4rem] flex gap-8 flex-col">
+      <div class="flex h-[600px] w-full max-w-[400px] flex-col gap-8 pt-[4rem]">
         <h3 class="text-[25px] font-normal">Etudiant | Alternant</h3>
         <h1 class="text-[90px] font-bold leading-none">Yulian <br />Guinand</h1>
         <p class="leading-6">
@@ -12,18 +12,13 @@
           alternance à Pasteur Mont Roland. Passionné par le développement web.
         </p>
 
-        <a
-          class="w-fit bg-[#2d2d2d] text-white font-semibold outline-none border-none py-4 px-8 transition-colors cursor-pointer text-sm hover:bg-[#414040]"
-          href="#contact"
-        >
-          Contact
-        </a>
+        <Button title="Contact" link="#contact" />
       </div>
       <div
-        class="w-[400px] h-[600px] overflow-hidden rounded-t-[15rem] bg-red-50"
+        class="h-[600px] w-[400px] overflow-hidden rounded-t-[15rem] bg-red-50"
       >
         <img
-          class="w-full h-full object-cover transition-all hover:scale-110"
+          class="h-full w-full object-cover transition-all hover:scale-110"
           src="/img/profile.jpg"
           alt="profileImage"
         />
