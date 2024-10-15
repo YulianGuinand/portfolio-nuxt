@@ -44,13 +44,13 @@ const datas = [
 <template>
   <section
     id="projetGalerie"
-    class="w-full flex items-center flex-col bg-white"
+    class="flex w-full flex-col items-center bg-white"
   >
-    <div class="w-full h-full flex items-center flex-col">
-      <h1 class="py-[20.28px] 0">Derniers Travaux</h1>
+    <div class="flex h-full w-full flex-col items-center">
+      <h1 class="py-[20.28px] text-4xl font-bold">Derniers Travaux</h1>
 
       <div
-        class="w-[90%] h-full grid grid-cols-1 grid-rows-6 lg:grid-cols-3 lg:grid-rows-2 gap-4"
+        class="grid h-full w-[90%] grid-cols-1 grid-rows-6 gap-4 lg:grid-cols-3 lg:grid-rows-2"
       >
         <ProjectCase v-for="(data, index) in datas" :data="data" :key="index" />
       </div>
