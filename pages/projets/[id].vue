@@ -1,6 +1,6 @@
 <template>
   <main class="mb-[400px]">
-    <ProjetView :data="projets[0]" class="pb-8" />
+    <ProjetView :data="projets[id - 1]" class="pb-8" />
   </main>
 </template>
 
@@ -10,6 +10,11 @@
 import { projets } from "~/lib/projets";
 
 const route = useRoute();
-
-console.log(route.params);
+const id = route.params.id;
+if (id > projets.length) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Le projet n'est pas trouvé !",
+  });
+}
 </script>

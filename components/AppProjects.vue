@@ -6,37 +6,37 @@ const datas = [
     title: "Yotion - Un Notion Clone",
     tag: "NextJs - TypeScript - Tailwind - BDD",
     imageUrl: "./img/yotion.png",
-    link: "",
+    link: "/projets/1",
   },
   {
     title: "Ping Pong Club",
     tag: "HTML - CSS - JS",
     imageUrl: "./img/ping_website.jpg",
-    link: "",
+    link: "/projets/2",
   },
   {
     title: "Reseau Social",
     tag: "Django - Python - MySQL - HTML - CSS",
     imageUrl: "./img/social.png",
-    link: "",
+    link: "/projets/3",
   },
   {
     title: "Site web du vignoble Guinand Vincent",
     tag: "HTML - CSS - JS",
     imageUrl: "./img/Website_Vin.png",
-    link: "",
+    link: "/projets/4",
   },
   {
     title: "Music Player en NextJs",
     tag: "NextJs - ReactJs - TypeScript",
     imageUrl: "./img/music-player.png",
-    link: "",
+    link: "/projets/5",
   },
   {
     title: "Site de Voitures",
     tag: "HTML - CSS - JS",
     imageUrl: "./img/Website_Car.png",
-    link: "",
+    link: "/projets/6 ",
   },
 ];
 </script>

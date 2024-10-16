@@ -75,7 +75,7 @@ onUnmounted(() => {
         <p>Portfolio. 1</p>
       </div>
       <div class="flex-1 text-center uppercase">
-        <p><a href="#" class="text-[30px]">Le Portfolio de Yulian</a></p>
+        <p><a href="/" class="text-[30px]">Le Portfolio de Yulian</a></p>
       </div>
 
       <div class="toggle-menu flex flex-1 justify-end">
@@ -91,7 +91,7 @@ onUnmounted(() => {
     >
       <div class="menu-item">
         <p>
-          <a href="#home" ref="link1" class="menu-item-link buttonLink">Home</a>
+          <a href="/" ref="link1" class="menu-item-link buttonLink">Home</a>
         </p>
       </div>
       <div class="menu-item">
@@ -101,7 +101,10 @@ onUnmounted(() => {
       </div>
       <div class="menu-item">
         <p>
-          <a href="#projetGalerie" ref="link2" class="menu-item-link buttonLink"
+          <a
+            href="/#projetGalerie"
+            ref="link2"
+            class="menu-item-link buttonLink"
             >Galerie de Projet</a
           >
         </p>
@@ -109,7 +112,7 @@ onUnmounted(() => {
       <div class="menu-item">
         <p>
           <a
-            href="#competencesSection"
+            href="/#competencesSection"
             ref="link3"
             class="menu-item-link buttonLink"
             >Compétences</a
@@ -118,7 +121,7 @@ onUnmounted(() => {
       </div>
       <div class="menu-item">
         <p>
-          <a href="#contact" ref="link4" class="menu-item-link buttonLink"
+          <a href="/#contact" ref="link4" class="menu-item-link buttonLink"
             >Contact</a
           >
         </p>

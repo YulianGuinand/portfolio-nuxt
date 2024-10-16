@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto flex h-fit w-fit flex-col items-center gap-4 overflow-hidden rounded-3xl shadow-lg"
+    class="mx-auto flex h-fit w-fit flex-col items-center gap-4 overflow-hidden rounded-lg shadow-lg"
   >
     <div class="flex h-fit w-full max-w-[600px] items-center gap-2">
       <img
