@@ -1,12 +1,6 @@
 <script setup>
 import gsap from "gsap";
 const burger = ref();
-const link1 = ref();
-const link2 = ref();
-const link3 = ref();
-const link4 = ref();
-const link5 = ref();
-const link6 = ref();
 
 let isOpen = false;
 const timeline = gsap.timeline({ paused: true });
@@ -48,14 +42,6 @@ onMounted(() => {
     },
     "<",
   );
-});
-
-onUnmounted(() => {
-  toggleButton.value.forEach((button) => {
-    button.value.removeEventListener("click", () => {
-      onClick();
-    });
-  });
 });
 </script>
 
