@@ -1,6 +1,6 @@
 <template>
   <main class="mb-[400px]">
-    <ProjetView :data="projets[id - 1]" class="pb-8" />
+    <ProjetView :data="projets[id - 1]" :id="id" class="pb-8" />
   </main>
 </template>
 
@@ -10,11 +10,21 @@
 import { projets } from "~/lib/projets";
 
 const route = useRoute();
-const id = route.params.id;
-if (id > projets.length) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: "Le projet n'est pas trouvé !",
-  });
-}
+let id = route.params.id;
+
+definePageMeta({
+  middleware: [
+    function (to, from) {
+      if (to.params.id === "0") {
+        throw createError({
+          statusCode: 404,
+          statusMessage: "Le projet n'est pas trouvé !",
+        });
+      }
+      if (to.params.id > projets.length) {
+        return navigateTo("/projets/1");
+      }
+    },
+  ],
+});
 </script>
