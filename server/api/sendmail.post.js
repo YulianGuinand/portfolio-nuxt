@@ -31,6 +31,10 @@ export default defineEventHandler(async (event) => {
     Message:
     ${text}`,
   };
-  await transporter.sendMail(options);
-  return { options };
+  try {
+    await transporter.sendMail(options);
+    return { statut: 200, message: "Message succesfuly sent" };
+  } catch (error) {
+    return { statut: 400, message: "An error occured, message not sent" };
+  }
 });
