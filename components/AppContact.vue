@@ -104,6 +104,8 @@
 <script setup>
 import Email from "~/assets/smtp/smtp";
 
+const runtime = useRuntimeConfig();
+
 const form = ref();
 const name = ref();
 const email = ref();
@@ -129,10 +131,10 @@ function sendEmail() {
 
   Email.send({
     Host: "smtp.elasticemail.com",
-    Username: "yulianguinand365@gmail.com",
-    Password: "D0502270E8F25604C116DD5D972ACA365BB4",
-    To: "yulianguinand365@gmail.com",
-    From: "yulianguinand365@gmail.com",
+    Username: runtime.username,
+    Password: runtime.password,
+    To: runtime.username,
+    From: runtime.username,
     Subject: "Portfolio-Email",
     Body: body,
   }).then((message) => {
