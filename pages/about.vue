@@ -10,14 +10,27 @@
       </div>
     </section>
 
-    <!-- <section id="textSection" class="w-full h-screen bg-[#2d2d2d] flex items-center justify-around">
-      <div class="container max-w-[700px] flex items-center text-2xl px-8">
-        <p>Your text content goes here.</p>
+    <section
+      id="textSection"
+      class="flex h-screen w-full flex-col items-center justify-around bg-[#2d2d2d] md:flex-row"
+    >
+      <div class="container flex max-w-[700px] items-center px-8 text-2xl">
+        <div class="wrapper">
+          <p ref="pRef" class="white text-white">
+            "Carpe diem, quam minimum credula postero" est un célèbre vers latin
+            tiré d'un poème d'Horace, signifiant : « Cueille l'instant présent
+            sans te préoccuper de ce que le lendemain te réserve. »
+          </p>
+        </div>
       </div>
-      <div class="image_container w-1/3 h-1/2 overflow-hidden">
-        <img class="w-full h-full object-cover scale-125 transition-all duration-300 ease-out" src="path-to-your-image.jpg" alt="image" />
+      <div class="image_container h-1/2 w-[90%] overflow-hidden md:w-1/3">
+        <img
+          class="h-full w-full scale-125 object-cover transition-transform hover:scale-100"
+          src="/img/horace.jpg"
+          alt="imageHorace"
+        />
       </div>
-    </section> -->
+    </section>
   </main>
 </template>
 
@@ -26,7 +39,7 @@
   height: calc(90vw * 16 / 9);
 }
 
-.white > .line > .word > .char {
+.white > .line > .word {
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
 }
@@ -34,7 +47,9 @@
 
 <script setup>
 import Slider from "~/components/Slider.vue";
-
+import gsap from "gsap";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+const pRef = ref();
 const squareSize = 50;
 let canvas = ref();
 let context;
@@ -135,6 +150,8 @@ function handleMouseMove(event) {
 }
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
   context = canvas.value.getContext("2d");
   canvas.value.style.position = "absolute";
 
@@ -144,6 +161,33 @@ onMounted(() => {
 
   // Démarrer la boucle de dessin
   drawSquares();
+
+  const { revert } = useSplitText(pRef, {
+    splitBy: "lines, words",
+    onComplete: (instance) => {
+      console.log("complete", instance);
+    },
+  });
+
+  const char = document.querySelectorAll(".wrapper p .line .word");
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#textSection",
+        start: "top top",
+        end: "+=150%",
+        scrub: true,
+        pin: true,
+      },
+    })
+    .set(
+      char,
+      {
+        opacity: 1,
+        stagger: 0.1,
+      },
+      0.1,
+    );
 });
 
 onBeforeUnmount(() => {
