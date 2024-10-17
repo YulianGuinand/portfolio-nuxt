@@ -22,7 +22,6 @@ const onClick = () => {
   isOpen = !isOpen;
 };
 onMounted(() => {
-  const toggleButton = ref([burger, link1, link2, link3, link4, link5, link6]);
   gsap.set(".menu-item p", { y: -225 });
 
   timeline.to(".overlay", {
@@ -49,12 +48,6 @@ onMounted(() => {
     },
     "<",
   );
-
-  toggleButton.value.forEach((button) => {
-    button.value.addEventListener("click", () => {
-      onClick();
-    });
-  });
 });
 
 onUnmounted(() => {
@@ -72,14 +65,22 @@ onUnmounted(() => {
       class="t-0 l-[50%] fixed z-[99999] flex w-full max-w-[1920px] items-center justify-between px-[2em] py-[1.5em] text-white mix-blend-difference"
     >
       <div class="info flex-1">
-        <p>Portfolio. 1</p>
+        <p>Portfolio.</p>
       </div>
       <div class="flex-1 text-center uppercase">
-        <p><a href="/" class="text-[30px]">Le Portfolio de Yulian</a></p>
+        <p>
+          <NuxtLink to="/" class="text-[12px] sm:text-[30px]"
+            >Le Portfolio de Yulian</NuxtLink
+          >
+        </p>
       </div>
 
       <div class="toggle-menu flex flex-1 justify-end">
-        <button ref="burger" class="burger buttonLink"></button>
+        <button
+          @click="onClick"
+          ref="burger"
+          class="burger buttonLink"
+        ></button>
       </div>
     </nav>
   </header>
@@ -91,38 +92,55 @@ onUnmounted(() => {
     >
       <div class="menu-item">
         <p>
-          <a href="/" ref="link1" class="menu-item-link buttonLink">Home</a>
+          <NuxtLink
+            to="/"
+            @click="onClick"
+            ref="link1"
+            class="menu-item-link buttonLink"
+            >Home</NuxtLink
+          >
         </p>
       </div>
       <div class="menu-item">
         <p>
-          <a href="/about" class="menu-item-link buttonLink">A Propos</a>
+          <NuxtLink
+            to="/about"
+            @click="onClick"
+            class="menu-item-link buttonLink"
+            >A Propos</NuxtLink
+          >
         </p>
       </div>
       <div class="menu-item">
         <p>
-          <a
+          <NuxtLink
+            @click="onClick"
             href="/#projetGalerie"
             ref="link2"
             class="menu-item-link buttonLink"
-            >Galerie de Projet</a
+            >Galerie de Projet</NuxtLink
           >
         </p>
       </div>
       <div class="menu-item">
         <p>
-          <a
+          <NuxtLink
             href="/#competencesSection"
             ref="link3"
             class="menu-item-link buttonLink"
-            >Compétences</a
+            @click="onClick"
+            >Compétences</NuxtLink
           >
         </p>
       </div>
       <div class="menu-item">
         <p>
-          <a href="/#contact" ref="link4" class="menu-item-link buttonLink"
-            >Contact</a
+          <NuxtLink
+            @click="onClick"
+            to="/#contact"
+            ref="link4"
+            class="menu-item-link buttonLink"
+            >Contact</NuxtLink
           >
         </p>
       </div>
@@ -130,19 +148,27 @@ onUnmounted(() => {
 
     <div class="sub-nav">
       <p>
-        <a
+        <NuxtLink
+          external
+          @click="onClick"
           target="_blank"
           ref="link5"
-          href="https://www.linkedin.com/in/yulian-guinand/"
+          to="https://www.linkedin.com/in/yulian-guinand/"
         >
           LinkedIn
-        </a>
+        </NuxtLink>
       </p>
       <p>.</p>
       <p>
-        <a target="_blank" ref="link6" href="https://github.com/YulianGuinand">
+        <NuxtLink
+          external
+          @click="onClick"
+          target="_blank"
+          ref="link6"
+          to="https://github.com/YulianGuinand"
+        >
           Github
-        </a>
+        </NuxtLink>
       </p>
       <p>.</p>
     </div>

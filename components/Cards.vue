@@ -1,5 +1,7 @@
 <template>
-  <div class="flex h-full w-full flex-wrap justify-center gap-8">
+  <div
+    class="mx-auto flex h-full w-full max-w-[1920px] flex-wrap justify-center gap-8 px-4"
+  >
     <Card
       v-if="data.length > 1"
       v-for="detailData in data"

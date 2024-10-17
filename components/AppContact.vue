@@ -154,7 +154,7 @@ onMounted(() => {
   continueBtn.value.addEventListener("click", () => hideMessage());
 });
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   form.value.removeEventListener("submit", () => {
     formSubmit();
   });
