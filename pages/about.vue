@@ -5,38 +5,8 @@
       <div
         class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black"
       >
-        <div class="slider h-full w-full">
-          <div class="panel red relative h-full w-full overflow-hidden">
-            <video
-              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-              ref="video1"
-              controls
-              loop
-              src="/videos/video1.mp4"
-              @scroll="video1.value.pause()"
-            ></video>
-          </div>
-          <div class="panel purple relative h-full w-full overflow-hidden">
-            <video
-              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-              ref="video2"
-              controls
-              loop
-              src="/videos/video2.mp4"
-              @scroll="video2.value.pause()"
-            ></video>
-          </div>
-          <div class="panel blue relative h-full w-full overflow-hidden">
-            <video
-              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-              ref="video3"
-              controls
-              loop
-              src="/videos/video3.mp4"
-              @scroll="video3.value.pause()"
-            ></video>
-          </div>
-        </div>
+        <!-- SLIDER -->
+        <Slider />
       </div>
     </section>
 
@@ -56,10 +26,6 @@
   height: calc(90vw * 16 / 9);
 }
 
-.panel video {
-  height: calc(90vw * 16 / 9);
-}
-
 .white > .line > .word > .char {
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
@@ -67,8 +33,7 @@
 </style>
 
 <script setup>
-import gsap from "gsap";
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import Slider from "~/components/Slider.vue";
 
 const squareSize = 50;
 let canvas = ref();
@@ -76,10 +41,6 @@ let context;
 let hoveredSquare = { x: -1, y: -1 };
 let animationSquares = [];
 const easingDuration = 300; // Durée de l'animation (en ms)
-
-const video1 = ref();
-const video2 = ref();
-const video3 = ref();
 
 // Fonction pour redimensionner le canvas
 function resizeCanvas() {
@@ -183,46 +144,6 @@ onMounted(() => {
 
   // Démarrer la boucle de dessin
   drawSquares();
-
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-  gsap.set(".panel", {
-    zIndex: (i, target, targets) => targets.length - i,
-  });
-
-  const videos = ref([video1, video2, video3]);
-
-  videos.value.forEach((video) => {
-    window.addEventListener("scroll", () => {
-      video.value.pause();
-    });
-  });
-
-  var images = gsap.utils.toArray(".panel:not(.blue)");
-
-  images.forEach((image, i) => {
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "section.s-about",
-        start: () => "top -" + window.innerHeight * (i + 0.5),
-        end: () => "+=" + window.innerHeight,
-        scrub: true,
-        toggleActions: "play none reverse none",
-        invalidateOnRefresh: true,
-      },
-    });
-
-    tl.to(image, { height: 0 });
-  });
-
-  ScrollTrigger.create({
-    trigger: "section.s-about",
-    scrub: true,
-    pin: true,
-    start: "5% top",
-    end: () => "+=" + (images.length + 1) * window.innerHeight,
-    invalidateOnRefresh: true,
-  });
 });
 
 onBeforeUnmount(() => {
