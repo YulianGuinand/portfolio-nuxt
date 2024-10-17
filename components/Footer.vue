@@ -7,35 +7,40 @@
         <div class="nav flex justify-between">
           <div class="col">
             <li>
-              <a href="#home"> Home </a>
+              <NuxtLink to="/#home"> Home </NuxtLink>
             </li>
             <li>
-              <a href="/about.html"> A Propos </a>
+              <NuxtLink to="/about.html"> A Propos </NuxtLink>
             </li>
             <li>
-              <a href="#projetGalerie"> Projets </a>
+              <NuxtLink to="/#projetGalerie"> Projets </NuxtLink>
             </li>
             <li>
-              <a href="#competencesSection"> Compétences </a>
+              <NuxtLink to="/#competencesSection"> Compétences </NuxtLink>
             </li>
             <li>
-              <a href="#contact"> Contact </a>
+              <NuxtLink to="/#contact"> Contact </NuxtLink>
             </li>
           </div>
 
           <div class="col">
             <li>
-              <a
+              <NuxtLink
+                external
                 target="_blank"
-                href="https://www.linkedin.com/in/yulian-guinand/"
+                to="https://www.linkedin.com/in/yulian-guinand/"
               >
                 LinkedIn
-              </a>
+              </NuxtLink>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/YulianGuinand">
+              <NuxtLink
+                external
+                target="_blank"
+                to="https://github.com/YulianGuinand"
+              >
                 Github
-              </a>
+              </NuxtLink>
             </li>
           </div>
         </div>
