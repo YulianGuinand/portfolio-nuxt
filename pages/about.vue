@@ -3,12 +3,12 @@
     <section class="s-about block h-full w-full overflow-hidden pb-8 pt-40">
       <canvas ref="canvas" id="canvas"></canvas>
       <div
-        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-[90vw] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black"
+        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black"
       >
         <div class="slider h-full w-full">
           <div class="panel red relative h-full w-full overflow-hidden">
             <video
-              class="absolute h-[80vh] max-h-[90vh] w-[90vw] w-full max-w-[calc(90vh_*_9/16)]"
+              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
               ref="video1"
               controls
               loop
@@ -18,7 +18,7 @@
           </div>
           <div class="panel purple relative h-full w-full overflow-hidden">
             <video
-              class="absolute h-[80vh] max-h-[90vh] w-[90vw] w-full max-w-[calc(90vh_*_9/16)]"
+              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
               ref="video2"
               controls
               loop
@@ -28,7 +28,7 @@
           </div>
           <div class="panel blue relative h-full w-full overflow-hidden">
             <video
-              class="absolute h-[80vh] max-h-[90vh] w-[90vw] w-full max-w-[calc(90vh_*_9/16)]"
+              class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
               ref="video3"
               controls
               loop
