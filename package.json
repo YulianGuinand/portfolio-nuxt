@@ -12,6 +12,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "lenis": "^1.1.14",
+    "nodemailer": "^6.9.15",
     "nuxt": "^3.13.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",

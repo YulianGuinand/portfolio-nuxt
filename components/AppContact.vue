@@ -102,8 +102,6 @@
 </style>
 
 <script setup>
-import Email from "~/assets/smtp/smtp";
-
 const runtime = useRuntimeConfig();
 
 const form = ref();
@@ -127,25 +125,21 @@ function hideMessage() {
 }
 
 function sendEmail() {
-  const body = `[PORTFOLIO-EMAIL] Name : ${name.value.value} <br>Email : ${email.value.value} <br>Sujet : ${subject.value.value} <br>Message : ${message.value.value}`;
-
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: runtime.username,
-    Password: runtime.password,
-    To: runtime.username,
-    From: runtime.username,
-    Subject: "Portfolio-Email",
-    Body: body,
-  }).then((message) => {
-    if (message === "OK") {
-      thank.value.classList.remove("hidden");
-      thank.value.style.position = "fixed";
-      thank.value.style.display = "flex";
-    } else {
-      console.log(message);
-    }
-  });
+  const body = {
+    name: name.value.value,
+    email: email.value.value,
+    subject: subject.value.value,
+    text: message.value.value,
+  };
+  fetch("/api/sendmail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
 onMounted(() => {
