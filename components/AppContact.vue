@@ -1,45 +1,5 @@
 <template>
-  <div
-    class="left-[50%] top-[50%] z-10 hidden h-[60%] max-h-[600px] w-[50%] max-w-[500px] translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-start gap-4 bg-white shadow-lg"
-    ref="thank"
-  >
-    <div
-      class="flex h-[50%] w-full items-center justify-center bg-[#97c15b] text-white"
-    >
-      <h2 class="text-3xl uppercase">merci</h2>
-    </div>
-    <div class="flex h-[50%] w-full flex-col items-center justify-around">
-      <p class="text-xl text-[#2d2d2d]">Votre message a bien été envoyé !</p>
-      <button
-        ref="continueBtn"
-        class="bg-[#97c15b] px-[2rem] py-[1rem] font-bold text-white"
-      >
-        Continuer
-      </button>
-    </div>
-  </div>
-
-  <div
-    class="left-[50%] top-[50%] z-10 hidden h-[60%] max-h-[600px] w-[50%] max-w-[500px] translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-start gap-4 bg-white shadow-lg"
-    ref="error"
-  >
-    <div
-      class="flex h-[50%] w-full items-center justify-center bg-red-400 text-white"
-    >
-      <h2 class="text-center text-3xl uppercase">
-        Il y a quelque chose qui cloche...
-      </h2>
-    </div>
-    <div class="flex h-[50%] w-full flex-col items-center justify-around">
-      <p class="text-xl text-[#2d2d2d]">Votre message n'a pas été envoyé !</p>
-      <button
-        ref="continueErrorBtn"
-        class="bg-red-400 px-[2rem] py-[1rem] font-bold text-white"
-      >
-        Continuer
-      </button>
-    </div>
-  </div>
+  <Submit :show="isSubmit" :message="submitMessage" :onClick="hideMessage" />
   <section
     id="contact"
     class="flex w-full flex-col items-center justify-center gap-4 pt-8"
@@ -129,10 +89,8 @@ const name = ref();
 const email = ref();
 const subject = ref();
 const message = ref();
-const thank = ref();
-const error = ref();
-const continueBtn = ref();
-const continueErrorBtn = ref();
+const isSubmit = ref(false);
+const submitMessage = ref("");
 
 const sendBtn = ref();
 
@@ -140,18 +98,6 @@ function formSubmit(e) {
   e.preventDefault();
   sendBtn.value.$el.disabled = true;
   sendEmail();
-}
-
-function hideMessage() {
-  if (!thank.value.classList.contains("hidden")) {
-    thank.value.classList.add("hidden");
-    thank.value.style.position = "fixed";
-    thank.value.style.display = "none";
-  } else {
-    error.value.classList.add("hidden");
-    error.value.style.position = "fixed";
-    error.value.style.display = "none";
-  }
 }
 
 function sendEmail() {
@@ -172,9 +118,7 @@ function sendEmail() {
     .then((data) => {
       switch (data.statut) {
         case 200:
-          thank.value.classList.remove("hidden");
-          thank.value.style.position = "fixed";
-          thank.value.style.display = "flex";
+          submitMessage.value = "success";
           name.value.value = "";
           email.value.value = "";
           subject.value.value = "";
@@ -182,33 +126,34 @@ function sendEmail() {
           break;
         case 400:
           console.log("error : ", data.message);
-          error.value.classList.remove("hidden");
-          error.value.style.position = "fixed";
-          error.value.style.display = "flex";
+          submitMessage.value = "error";
           name.value.value = "";
           email.value.value = "";
           subject.value.value = "";
           message.value.value = "";
           break;
       }
+      isSubmit.value = true;
       sendBtn.value.$el.disabled = true;
+      setTimeout(() => {
+        sendBtn.value.$el.disabled = false;
+      }, 3000);
     });
 }
+
+const hideMessage = () => {
+  isSubmit.value = false;
+};
 
 onMounted(() => {
   form.value.addEventListener("submit", (e) => {
     formSubmit(e);
   });
-
-  continueBtn.value.addEventListener("click", () => hideMessage());
-  continueErrorBtn.value.addEventListener("click", () => hideMessage());
 });
 
 onBeforeUnmount(() => {
   form.value.removeEventListener("submit", () => {
     formSubmit();
   });
-  continueBtn.value.removeEventListener("click", () => hideMessage());
-  continueErrorBtn.value.removeEventListener("click", () => hideMessage());
 });
 </script>
