@@ -1,4 +1,4 @@
-name: Build
+name: Scan
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
 
 jobs:
   build:
-    name: Build and analyze
-    runs-on: ubuntu-latest
+    name: Analyze
+    runs-on: [self-hosted]
     
     steps:
       - uses: actions/checkout@v4
