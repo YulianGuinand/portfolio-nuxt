@@ -17,5 +17,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Exectute sonarqube scan
-      - run: sonar-scanner -Dsonar.projectKey=portfolio -Dsonar.sources=. -Dsonar.host.url=${{ secrets.SONAR_HOST }} -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+        run: sonar-scanner -Dsonar.projectKey=portfolio -Dsonar.sources=. -Dsonar.host.url=${{ secrets.SONAR_HOST }} -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
