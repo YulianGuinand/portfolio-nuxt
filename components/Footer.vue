@@ -1,53 +1,45 @@
 <template>
   <footer id="footer" class="footer pointer-events-none relative z-0">
-    <div
-      class="footer-wrapper pointer-events-auto fixed bottom-0 left-0 h-[400px] w-full bg-[#ebebeb]"
-    >
+    <div class="footer-wrapper pointer-events-auto fixed bottom-0 left-0 h-[400px] w-full bg-[#ebebeb]">
       <div class="content__inner mx-auto my-0 w-[90%] p-[100px]">
         <div class="nav flex justify-between">
           <div class="col">
-            <li>
-              <NuxtLink to="/#home"> Home </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/about.html"> A Propos </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#projetGalerie"> Projets </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#competencesSection"> Compétences </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#contact"> Contact </NuxtLink>
-            </li>
+            <ul>
+              <li>
+                <NuxtLink to="/#home"> Home </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/about.html"> A Propos </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/#projetGalerie"> Projets </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/#competencesSection"> Compétences </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/#contact"> Contact </NuxtLink>
+              </li>
+            </ul>
           </div>
 
           <div class="col">
-            <li>
-              <NuxtLink
-                external
-                target="_blank"
-                to="https://www.linkedin.com/in/yulian-guinand/"
-              >
-                LinkedIn
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                external
-                target="_blank"
-                to="https://github.com/YulianGuinand"
-              >
-                Github
-              </NuxtLink>
-            </li>
+            <ul>
+              <li>
+                <NuxtLink external target="_blank" to="https://www.linkedin.com/in/yulian-guinand/">
+                  LinkedIn
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink external target="_blank" to="https://github.com/YulianGuinand">
+                  Github
+                </NuxtLink>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div
-          class="copyright mt-[6em] flex justify-between text-[0.8em] uppercase leading-[30px] opacity-50"
-        >
+        <div class="copyright mt-[6em] flex justify-between text-[0.8em] uppercase leading-[30px] opacity-50">
           <span>2024. All right reserved.</span>
           <span>Site by <u>Yulian</u>.</span>
         </div>

@@ -1,31 +1,22 @@
 <template>
   <div class="slider h-full w-full">
     <div class="panel red relative h-full w-full overflow-hidden">
-      <video
-        class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-        ref="video1"
-        controls
-        loop
-        src="/videos/video1.mp4"
-      ></video>
+      <video class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]" ref="video1" controls loop
+        src="/videos/video1.mp4">
+        <p>Votre navigateur ne prend pas en charge cette video</p>
+      </video>
     </div>
     <div class="panel purple relative h-full w-full overflow-hidden">
-      <video
-        class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-        ref="video2"
-        controls
-        loop
-        src="/videos/video2.mp4"
-      ></video>
+      <video class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]" ref="video2" controls loop
+        src="/videos/video2.mp4">
+        <p>Votre navigateur ne prend pas en charge cette video</p>
+      </video>
     </div>
     <div class="panel blue relative h-full w-full overflow-hidden">
-      <video
-        class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]"
-        ref="video3"
-        controls
-        loop
-        src="/videos/video3.mp4"
-      ></video>
+      <video class="absolute h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)]" ref="video3" controls loop
+        src="/videos/video3.mp4">
+        <p>Votre navigateur ne prend pas en charge cette video</p>
+      </video>
     </div>
   </div>
 </template>
@@ -57,10 +48,10 @@ onMounted(() => {
     });
   });
 
-  var images = gsap.utils.toArray(".panel:not(.blue)");
+  const images = gsap.utils.toArray(".panel:not(.blue)");
 
   images.forEach((image, i) => {
-    var tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "section.s-about",
         start: () => "top -" + window.innerHeight * (i + 0.5),

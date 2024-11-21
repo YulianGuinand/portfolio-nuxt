@@ -3,17 +3,14 @@
     <section class="s-about block h-full w-full overflow-hidden pb-8 pt-40">
       <canvas ref="canvas" id="canvas"></canvas>
       <div
-        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black"
-      >
+        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black">
         <!-- SLIDER -->
         <Slider />
       </div>
     </section>
 
-    <section
-      id="textSection"
-      class="flex h-screen w-full flex-col items-center justify-around bg-[#2d2d2d] md:flex-row"
-    >
+    <section id="textSection"
+      class="flex h-screen w-full flex-col items-center justify-around bg-[#2d2d2d] md:flex-row">
       <div class="container flex max-w-[700px] items-center px-8 text-2xl">
         <div class="wrapper">
           <p ref="pRef" class="white text-white">
@@ -24,11 +21,8 @@
         </div>
       </div>
       <div class="image_container h-1/2 w-[90%] overflow-hidden md:w-1/3">
-        <img
-          class="h-full w-full scale-125 object-cover transition-transform hover:scale-100"
-          src="/img/horace.jpg"
-          alt="imageHorace"
-        />
+        <img class="h-full w-full scale-125 object-cover transition-transform hover:scale-100" src="/img/horace.jpg"
+          alt="image of Horace" />
       </div>
     </section>
   </main>
@@ -39,7 +33,7 @@
   height: calc(90vw * 16 / 9);
 }
 
-.white > .line > .word {
+.white>.line>.word {
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
 }
@@ -162,15 +156,12 @@ onMounted(() => {
   // Démarrer la boucle de dessin
   drawSquares();
 
-  const { revert } = useSplitText(pRef, {
+  useSplitText(pRef, {
     splitBy: "lines, words",
-    onComplete: (instance) => {
-      console.log("complete", instance);
-    },
   });
 
   const char = document.querySelectorAll(".wrapper p .line .word");
-  const tl = gsap
+  gsap
     .timeline({
       scrollTrigger: {
         trigger: "#textSection",

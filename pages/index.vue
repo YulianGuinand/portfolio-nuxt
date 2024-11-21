@@ -6,6 +6,5 @@
     <AppProjects />
     <AppCompetences />
     <AppContact />
-    <!-- TEST PIPELINE SONARQUBE -->
   </main>
 </template>

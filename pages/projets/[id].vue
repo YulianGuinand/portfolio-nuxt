@@ -4,8 +4,6 @@
   </main>
 </template>
 
-<style></style>
-
 <script setup>
 import { projets } from "~/lib/projets";
 
