@@ -20,4 +20,4 @@ jobs:
         run: docker rm portfolio-nuxt || true
 
       - name: Run Docker container
-        run: docker run -d --name portfolio-nuxt -p 80:80 portfolio-nuxt:latest
+        run: docker run -d --name portfolio-nuxt -p 80:3000 portfolio-nuxt:latest
