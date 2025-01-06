@@ -11,10 +11,15 @@ onMounted(() => {
 
   requestAnimationFrame(raf);
 });
+
+useSeoMeta({
+  ogImage: "/img/profile.jpg",
+  twitterImage: "/img/profile.jpg",
+});
 </script>
 
 <template>
   <div>
-    <NuxtLayout/>
+    <NuxtLayout />
   </div>
 </template>

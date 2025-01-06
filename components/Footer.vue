@@ -1,6 +1,8 @@
 <template>
   <footer id="footer" class="footer pointer-events-none relative z-0">
-    <div class="footer-wrapper pointer-events-auto fixed bottom-0 left-0 h-[400px] w-full bg-[#ebebeb]">
+    <div
+      class="footer-wrapper pointer-events-auto fixed bottom-0 left-0 h-[400px] w-full bg-[#ebebeb]"
+    >
       <div class="content__inner mx-auto my-0 w-[90%] p-[100px]">
         <div class="nav flex justify-between">
           <div class="col">
@@ -9,7 +11,7 @@
                 <NuxtLink to="/#home"> Home </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/about.html"> A Propos </NuxtLink>
+                <NuxtLink to="/about"> A Propos </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/#projetGalerie"> Projets </NuxtLink>
@@ -26,12 +28,20 @@
           <div class="col">
             <ul>
               <li>
-                <NuxtLink external target="_blank" to="https://www.linkedin.com/in/yulian-guinand/">
+                <NuxtLink
+                  external
+                  target="_blank"
+                  to="https://www.linkedin.com/in/yulian-guinand/"
+                >
                   LinkedIn
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink external target="_blank" to="https://github.com/YulianGuinand">
+                <NuxtLink
+                  external
+                  target="_blank"
+                  to="https://github.com/YulianGuinand"
+                >
                   Github
                 </NuxtLink>
               </li>
@@ -39,7 +49,9 @@
           </div>
         </div>
 
-        <div class="copyright mt-[6em] flex justify-between text-[0.8em] uppercase leading-[30px] opacity-50">
+        <div
+          class="copyright mt-[6em] flex justify-between text-[0.8em] uppercase leading-[30px] opacity-50"
+        >
           <span>2024. All right reserved.</span>
           <span>Site by <u>Yulian</u>.</span>
         </div>
@@ -88,7 +100,7 @@
 
 <script setup>
 import gsap from "gsap";
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
