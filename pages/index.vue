@@ -1,14 +1,15 @@
 <script setup>
 useSeoMeta({
   title: "Portfolio - Yulian Guinand",
-  description: "[description]",
-  ogTitle: "[og:title]",
-  ogDescription: "[og:description]",
-  ogImage: "[og:image]",
-  ogUrl: "[og:url]",
-  twitterTitle: "[twitter:title]",
-  twitterDescription: "[twitter:description]",
-  twitterImage: "[twitter:image]",
+  description:
+    "Découvrez le portfolio de Yulian Guinand, développeur spécialisé en Next.js, React.js, TypeScript et autres technologies modernes. Explorez ses projets innovants, ses compétences variées et contactez-le pour collaborer.",
+  ogTitle: "Portfolio - Yulian Guinand",
+  ogDescription:
+    "Explorez le portfolio de Yulian Guinand, développeur full-stack passionné par les technologies modernes comme Next.js et TypeScript. Découvrez ses projets et ses compétences.",
+  ogUrl: "https://yulianguinand.fr/",
+  twitterTitle: "Portfolio - Yulian Guinand",
+  twitterDescription:
+    "Développeur spécialisé en Next.js, React.js et plus, Yulian Guinand présente ses projets et compétences. Contactez-le pour en savoir plus.",
   twitterCard: "summary",
 });
 </script>

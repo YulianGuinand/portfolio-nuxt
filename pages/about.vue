@@ -3,14 +3,17 @@
     <section class="s-about block h-full w-full overflow-hidden pb-8 pt-40">
       <canvas ref="canvas" id="canvas"></canvas>
       <div
-        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black">
+        class="slider-wrapper relative m-auto flex h-[80vh] max-h-[90vh] w-full max-w-[calc(90vh_*_9/16)] items-center justify-center overflow-hidden rounded-lg bg-black"
+      >
         <!-- SLIDER -->
         <Slider />
       </div>
     </section>
 
-    <section id="textSection"
-      class="flex h-screen w-full flex-col items-center justify-around bg-[#2d2d2d] md:flex-row">
+    <section
+      id="textSection"
+      class="flex h-screen w-full flex-col items-center justify-around bg-[#2d2d2d] md:flex-row"
+    >
       <div class="container flex max-w-[700px] items-center px-8 text-2xl">
         <div class="wrapper">
           <p ref="pRef" class="white text-white">
@@ -21,8 +24,11 @@
         </div>
       </div>
       <div class="image_container h-1/2 w-[90%] overflow-hidden md:w-1/3">
-        <img class="h-full w-full scale-125 object-cover transition-transform hover:scale-100" src="/img/horace.jpg"
-          alt="image of Horace" />
+        <img
+          class="h-full w-full scale-125 object-cover transition-transform hover:scale-100"
+          src="/img/horace.jpg"
+          alt="image of Horace"
+        />
       </div>
     </section>
   </main>
@@ -33,16 +39,16 @@
   height: calc(90vw * 16 / 9);
 }
 
-.white>.line>.word {
+.white > .line > .word {
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
 }
 </style>
 
 <script setup>
-import Slider from "~/components/Slider.vue";
 import gsap from "gsap";
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
+import Slider from "~/components/Slider.vue";
 const pRef = ref();
 const squareSize = 50;
 let canvas = ref();
@@ -50,6 +56,20 @@ let context;
 let hoveredSquare = { x: -1, y: -1 };
 let animationSquares = [];
 const easingDuration = 300; // Durée de l'animation (en ms)
+
+useSeoMeta({
+  title: "À propos - Yulian Guinand",
+  description:
+    "Découvrez la philosophie de Yulian Guinand autour du Carpe Diem, son histoire et sa passion pour le montage vidéo à travers des œuvres inspirantes.",
+  ogTitle: "À propos - Yulian Guinand",
+  ogDescription:
+    "Plongez dans l'univers de Yulian Guinand, sa philosophie Carpe Diem, ses vidéos montées avec passion et l'histoire inspirante de cette célèbre citation.",
+  ogUrl: "https://yulianguinand.fr/about",
+  twitterTitle: "À propos - Yulian Guinand",
+  twitterDescription:
+    "Explorez la philosophie Carpe Diem de Yulian Guinand, ses créations vidéo et l'histoire de cette citation emblématique.",
+  twitterCard: "summary",
+});
 
 // Fonction pour redimensionner le canvas
 function resizeCanvas() {

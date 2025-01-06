@@ -25,4 +25,20 @@ definePageMeta({
     },
   ],
 });
+
+// Génération des métadonnées dynamiques
+if (id > 0 && id <= projets.length) {
+  const project = projets[id - 1];
+
+  useSeoMeta({
+    title: `${project.title} - Projet de Yulian Guinand`,
+    description: `${project.detail.replace(/<br\/?>/g, " ").slice(0, 160)}...`,
+    ogTitle: `${project.title} - Projet de Yulian Guinand`,
+    ogDescription: project.detail.replace(/<br\/?>/g, " ").slice(0, 200),
+    ogUrl: `https://yulianguinand.fr/projets/${id}`,
+    twitterTitle: `${project.title} - Projet de Yulian Guinand`,
+    twitterDescription: `${project.detail.replace(/<br\/?>/g, " ").slice(0, 160)}...`,
+    twitterCard: "summary",
+  });
+}
 </script>
