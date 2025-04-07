@@ -32,5 +32,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ["nuxt-split-type"],
-
+  build: {
+    transpile: ["gsap"],
+  },
 });
